@@ -3,7 +3,6 @@
 Day1
 
 :Author: Tigran Horozian
-:Maintainer: Tigran Horozian
 :email: tigran.horozian@gmail.com
 """
 
