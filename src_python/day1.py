@@ -13,14 +13,13 @@ def circular_sum_matching(input_string):
     result = 0
 
     #Create a list from the input string and append the first digit at the end
-    for _ in input_string:
-        list_input.append(_)
+    list_input = [int(_) for _ in input_string]
     list_input.append(list_input[0])
 
     #Calculate the sum
     for _ in list_input[:-1]:
         if list_input[index] == list_input[index + 1]:
-            result += int(list_input[index])
+            result += list_input[index]
         index += 1
     return result
 
@@ -35,13 +34,12 @@ def halfway_circular_matching(input_string):
     input_string += input_string[:len(input_string)/2]
 
     #Create a list from the input string
-    for _ in input_string:
-        list_input.append(_)
+    list_input = [int(_) for _ in input_string]
 
     #Calculate the sum
     for _ in list_input[:len_input]:
         if list_input[index] == list_input[index + len_input/2]:
-            result += int(list_input[index])
+            result += list_input[index]
         index += 1
     return result
 
