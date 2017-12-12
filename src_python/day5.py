@@ -6,7 +6,24 @@ Day5 source code
 :email: tigran.horozian@gmail.com
 """
 import argparse
+import IPython
 
+def compute_part1(mylist):
+    index = 0
+    result = 0
+    while index < len(mylist):
+        jump = mylist[index]
+        mylist[index] += 1
+        index += jump
+        result +=1
+
+    return result
+
+def compute_part2(mylist):
+    index = 0
+    result = 0
+    while index < len(mylist):
+        
 
 if __name__ == '__main__':
 
@@ -17,10 +34,13 @@ if __name__ == '__main__':
 
     #Vars
     f = args.filename.readlines()
-    result1 = 0
-    result2 = 0
+
+    #Create a correct list from what is read
+    for _ in range(0,len(f)):
+        f[_] = f[_].split("\n")[0]
+        f[_] = int(f[_])
 
 
 
-    print("first half is : " + str(result1))
-    print("second half is : " + str(result2))
+    print("first half answer is : " + str(compute_part1(f)))
+    print("second half answer is : " + str(compute_part2(f)))
