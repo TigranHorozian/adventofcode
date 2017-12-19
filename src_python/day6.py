@@ -40,7 +40,10 @@ def reallocate_banks(input_puzzle):
         states.append(nextstate)
         result +=1
 
-    return result
+    return result, nextstate # return last list to know the loop size
 
 if __name__ == '__main__':
-        print("Answer for first half is : " + str(reallocate_banks(puzzle)))
+    res1, loop = reallocate_banks(puzzle)
+    res2, tmp = reallocate_banks(loop) # recall on first duplicate list
+    print("Answer for first half is : " + str(res1))
+    print("Answer for second half is : " + str(res2))
